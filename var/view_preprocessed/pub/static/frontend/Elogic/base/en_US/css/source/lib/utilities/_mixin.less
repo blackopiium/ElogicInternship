@@ -1,0 +1,31 @@
+//
+//  Input placeholder
+//  ---------------------------------------------
+
+.lib-elogic-input-placeholder(
+    @_input-placeholder-color: @form-element-input-placeholder__color,
+    @_input-placeholder-font-weight: @form-element-input__font-weight,
+    @_input-placeholder-font-size: false
+
+) {
+    &::-webkit-input-placeholder {
+        .lib-css(color, @_input-placeholder-color);
+        .lib-css(font-weight, @_input-placeholder-font-weight);
+        .lib-css(font-weight, @_input-placeholder-font-size);
+    }
+
+    &:-moz-placeholder {
+        .lib-css(color, @_input-placeholder-color);
+        .lib-css(font-weight, @_input-placeholder-font-weight);
+    }
+
+    &::-moz-placeholder {
+        .lib-css(color, @_input-placeholder-color);
+        .lib-css(font-weight, @_input-placeholder-font-weight);
+    }
+
+    &:-ms-input-placeholder {
+        .lib-css(color, @_input-placeholder-color);
+        .lib-css(font-weight, @_input-placeholder-font-weight);
+    }
+}

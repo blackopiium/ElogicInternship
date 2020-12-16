@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">-->
+<!--                <arguments>-->
+<!--                    <argument name="css_class" xsi:type="string">header links</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+<!--        <referenceContainer name="footer">-->
+<!--            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>-->
+<!--        </referenceContainer>-->
+<!--        <referenceBlock name="report.bugs" remove="true"/>-->
+<!--        <move element="copyright" destination="before.body.end"/>-->
+
+<!--        <referenceBlock name="logo" remove="true"/>s-->
+        <!--<move element="store.menu" destination="top.search"/>-->
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="top.search" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="footer">
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="footer_logo">
+                <arguments>
+                    <argument name="logo_file" xsi:type="string">images/storenix.png</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_contact_information">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_contact_information</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_links_container">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">Footer_links_container</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="icons_container">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">icons_container</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+    </body>
+</page>

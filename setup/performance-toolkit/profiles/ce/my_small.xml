@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xi="http://www.w3.org/2001/XInclude">
+    <profile>
+        <admin_users>0</admin_users><!-- Number of admin users to generate -->
+        <websites>0</websites> <!-- Number of websites to generate -->
+        <store_groups>0</store_groups> <!--Number of stores-->
+        <store_views>1</store_views> <!-- Number of store views -->
+        <assign_entities_to_all_websites>0</assign_entities_to_all_websites> <!-- Whether to assign all products per each website -->
+        <simple_products>100</simple_products> <!-- Simple products count -->
+        <configurable_products> <!-- Configurable product -->
+            <config>
+                <attributes>
+                    <attribute>
+                        <options>3</options>
+                        <swatches>image</swatches>
+                    </attribute>
+                    <attribute>
+                        <options>5</options>
+                    </attribute>
+                </attributes>
+                <sku>Configurable Product %s</sku>
+                <products>16</products>
+            </config>
+        </configurable_products>
+        <product-images>
+            <images-count>100</images-count>
+            <images-per-product>3</images-per-product>
+        </product-images>
+        <categories>20</categories> <!-- Number of categories to generate -->
+        <categories_nesting_level>3</categories_nesting_level> <!-- Nesting level for categories -->
+        <customers>0</customers> <!-- Number of customers to generate -->
+
+        <catalog_price_rules>0</catalog_price_rules> <!-- Number of catalog price rules -->
+        <cart_price_rules>0</cart_price_rules> <!-- Number of cart price rules -->
+        <cart_price_rules_floor>0</cart_price_rules_floor>
+        <coupon_codes>0</coupon_codes> <!-- Number of coupon codes -->
+
+        <product_attribute_sets>3</product_attribute_sets> <!-- Number of product attribute sets -->
+        <product_attribute_sets_attributes>3</product_attribute_sets_attributes> <!-- Number of attributes per set -->
+        <product_attribute_sets_attributes_values>5</product_attribute_sets_attributes_values> <!-- Number of values per attribute -->
+
+        <orders>0</orders> <!-- Orders count -->
+
+        <xi:include href="../../config/attributeSets.xml" />
+        <xi:include href="../../config/description.xml" />
+        <xi:include href="../../config/shortDescription.xml" />
+    </profile>
+</config>

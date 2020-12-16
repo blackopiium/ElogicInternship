@@ -1,0 +1,90 @@
+sudo -uwww-data php bin/magento mod:di Niks_LayeredNavigation
+sudo -uwww-data php bin/magento mod:en Ot_Tranzila Ot_TranzilaRedirectIframe
+mysql -hdb -umagento2 -p rubberloft_13042020 < rubber_new.13.04.2020.sql
+sudo -uwww-data php bin/magento index:reindex
+
+export XDEBUG_CONFIG="idekey=PHPSTORM"
+php -dxdebug.idekey=PHPSTORM
+export XDEBUG_CONFIG="remote_connect_back=1 remote_enable=1 idekey=PHPSTORM"
+export PHP_IDE_CONFIG="serverName=localhost"
+printenv | grep XDEBUG_CONFIG
+export PHP_IDE_CONFIG="serverName=Xdebug"
+docker-compose run --rm cli bash
+
+sudo chmod 777 app/etc/config.php
+cd /var/www/magento/
+composer install
+
+
+
+sudo -uwww-data php bin/magento setup:up
+sudo -uwww-data php bin/magento deploy:mode:set production
+rm -rf generated/* && sudo -uwww-data php bin/magento s:d:c
+sudo -uwww-data php bin/magento ca:di full_page
+sudo -uwww-data php bin/magento ca:fl
+sudo -uwww-data php bin/magento cron:run
+sudo -uwww-data php ./vendor/bin/ece-tools patch
+sudo -uwww-data php bin/magento setup:static-content:deploy -f -j8
+sudo -uwww-data php bin/magento setup:static-content:deploy -f -a frontend --theme Myglass/base
+sudo -uwww-data php bin/magento setup:static-content:deploy en_US -f -a froMagento_Wishlist/templates/view.phtmlntend --theme Myglass/base && \
+sudo -uwww-data php bin/magento setup:static-content:deploy en_US -f -a adminhtml
+
+sudo chmod 777 app/etc/config.php && sudo -uwww-data php bin/magento setup:up && sudo -uwww-data php bin/magento ca:di full_page && sudo -uwww-data php bin/magento s:d:c && sudo -uwww-data grunt exec:all && sudo -uwww-data grunt less
+
+sudo -uwww-data grunt exec:all && sudo -uwww-data grunt less
+sudo -uwww-data grunt watch
+
+#sudo -uwww-data grunt exec:nego_home4
+sudo -uwww-data bin/magento setup:perf:generate-fixtures setup/performance-toolkit/profiles/ce/my_small.xml
+
+sudo -uwww-data php bin/magento app:config:import
+
+
+sudo -uwww-data php bin/magento config:set --lock-config --scope="store" --scope-code="be_en" general/country/default BE
+sudo -uwww-data php bin/magento config:set --lock-env smtp/general/enabled 0
+sudo -uwww-data php bin/magento config:set --lock-env admin/security/session_lifetime 31536000
+
+
+andriynomed.testing@gmail.com
+userUSER123
+
+sudo -uwww-data bin/magento setup:install --base-url=http://magento241.site/ \
+--db-host=localhost --db-name=magento241_20201201 --db-user=magento2 --db-password=1112masl \
+--admin-firstname=AdminFirstName --admin-lastname=AdminLastName --admin-email=echelonlenamaslova@gmail.com \
+--admin-user=admin --admin-password=admin123 --backend-frontname=admin --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=elasticsearch --elasticsearch-port=9200 --elasticsearch-index-prefix=magento241
+
+sudo -uwww-data php bin/magento admin:user:create --admin-user=admin --admin-password=admin123 \
+--admin-email=echelonlenamaslova@gmail.com --admin-firstname=AdminFirstName --admin-lastname=AdminLastName
+
+cd /var/www/ && sudo chown -R www-data:www-data magento/ && sudo chmod -R g+w magento/ && cd /var/www/magento/
+rm -rf var/cache && rm -rf var/page_cache && rm -rf var/session && rm -rf var/generation/* && rm -rf generated/*
+rm -rf var/view_preprocessed && rm -rf pub/static/*
+
+chown -R www-data:www-data vendor/ && sudo chmod -R g+w vendor/
+chown -R www-data:www-data var/log/ && sudo chmod -R g+w var/log/
+chown -R www-data:www-data app/ && sudo chmod -R g+w app/
+
+composer config --auth http-basic.dist.aheadworks.com xxxxx yyyyyyy
+
+
+require('uiRegistry').get(function(c){console.log(c.name);});
+
+git rm -r --cached .
+git add .
+git commit -m ".gitignore fix"
+
+var errMsg = [
+                {type: "success", text: "Thank you for registering with Umovis USA."},
+                {type: "success", text: "You saved the address."},
+                {type: "notice", text: "You must have a Subscription-based product in the cart to process the order!"},
+                {type: "error", text: "The requested qty exceeds the maximum qty allowed in shopping cart"}
+            ];
+            $.cookieStorage.set('mage-messages', errMsg);
+
+
+
+
+
+
+

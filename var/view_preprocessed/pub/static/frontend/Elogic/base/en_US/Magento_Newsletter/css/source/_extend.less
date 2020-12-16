@@ -1,0 +1,111 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .block.newsletter {
+        .field {
+            .control {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        input {
+            .lib-form-element-input(
+                @_type: input-text,
+                @_border: none,
+                @_background: @color-elogic-grey1,
+                @_height: 55px,
+                @_width: 100%,
+                @_placeholder-color: @color-elogic-grey2,
+                @_placeholder-font-style: @font-style__emphasis,
+                @_font-size: 14px,
+                @_font-family: @font-family-name__rubik,
+                @_font-style: normal
+            );
+            max-width: 500px;
+            padding-left: 25px;
+        }
+
+        .action {
+            &.subscribe {
+                .lib-button-primary(
+                    @_button-font-family: @font-family-name__rubik,
+                    @_button-font-size: 14px,
+                    @_button-font-weight: bolder,
+                    @_button-margin: 0 auto,
+                    @_button-color: @color-black,
+                    @_button-background: @color-elogic-grey1,
+                    @_button-border: none,
+                    @_button-color-hover: @color-black,
+                    @_button-background-hover: @color-elogic-grey1,
+                    @_button-border-hover: none,
+                    @_button-color-active: @color-black,
+                    @_button-background-active: @color-elogic-grey1,
+                    @_button-border-active: none
+
+                );
+                .lib-icon-image(
+                    @_icon-image: '@{baseDir}images/redArrow.png',
+                    @_icon-image-position-x: center,
+                    @_icon-image-position-y: center,
+                    @_icon-image-position: after
+                );
+                height: 55px;
+                padding-left: 17%;
+                padding-top: 11px;
+                text-transform: uppercase;
+            }
+        }
+        .form.subscribe {
+            margin-top: 49px;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        max-width: none;
+        .action {
+            &.subscribe {
+                .lib-button-primary(
+                    @_button-font-family: @font-family-name__rubik,
+                    @_button-font-size: 14px,
+                    @_button-font-weight: bolder,
+                    @_button-margin: 0 auto,
+                    @_button-color: @color-black,
+                    @_button-background: @color-elogic-grey1,
+                    @_button-border: none,
+                    @_button-color-hover: @color-black,
+                    @_button-background-hover: @color-elogic-grey1,
+                    @_button-border-hover: none,
+                    @_button-color-active: @color-black,
+                    @_button-background-active: @color-elogic-grey1,
+                    @_button-border-active: none
+
+                );
+                .lib-icon-image(
+                    @_icon-image: '@{baseDir}images/redArrow.png',
+                    @_icon-image-position-x: center,
+                    @_icon-image-position-y: center,
+                    @_icon-image-position: after
+                );
+                height: 55px;
+                padding-left: 159px;
+                padding-top: 13px;
+                text-transform: uppercase;
+            }
+        }
+        .form.subscribe {
+            margin-left: 40px;
+            margin-top: 49px;
+        }
+    }
+
+}
