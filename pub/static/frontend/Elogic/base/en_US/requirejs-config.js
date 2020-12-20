@@ -6,77 +6,6 @@
  */
 
 var config = {
-    waitSeconds: 0,
-    map: {
-        '*': {
-            'ko': 'knockoutjs/knockout',
-            'knockout': 'knockoutjs/knockout',
-            'mageUtils': 'mage/utils/main',
-            'rjsResolver': 'mage/requirejs/resolver'
-        }
-    },
-    shim: {
-        'jquery/jquery-migrate': ['jquery'],
-        'jquery/jstree/jquery.hotkeys': ['jquery'],
-        'jquery/hover-intent': ['jquery'],
-        'mage/adminhtml/backup': ['prototype'],
-        'mage/captcha': ['prototype'],
-        'mage/new-gallery': ['jquery'],
-        'mage/webapi': ['jquery'],
-        'jquery/ui': ['jquery'],
-        'MutationObserver': ['es6-collections'],
-        'matchMedia': {
-            'exports': 'mediaCheck'
-        },
-        'magnifier/magnifier': ['jquery']
-    },
-    paths: {
-        'jquery/validate': 'jquery/jquery.validate',
-        'jquery/hover-intent': 'jquery/jquery.hoverIntent',
-        'jquery/file-uploader': 'jquery/fileUploader/jquery.fileuploader',
-        'prototype': 'legacy-build.min',
-        'jquery/jquery-storageapi': 'jquery/jquery.storageapi.min',
-        'text': 'mage/requirejs/text',
-        'domReady': 'requirejs/domReady',
-        'spectrum': 'jquery/spectrum/spectrum',
-        'tinycolor': 'jquery/spectrum/tinycolor',
-        'jquery-ui-modules': 'jquery/ui-modules'
-    },
-    deps: [
-        'jquery/jquery-migrate'
-    ],
-    config: {
-        mixins: {
-            'jquery/jstree/jquery.jstree': {
-                'mage/backend/jstree-mixin': true
-            },
-            'jquery': {
-                'jquery/patches/jquery': true
-            }
-        },
-        text: {
-            'headers': {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        }
-    }
-};
-
-require(['jquery'], function ($) {
-    'use strict';
-
-    $.noConflict();
-});
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
     map: {
         '*': {
             'rowBuilder':             'Magento_Theme/js/row-builder',
@@ -153,6 +82,77 @@ require.config(config);
  */
 
 var config = {
+    waitSeconds: 0,
+    map: {
+        '*': {
+            'ko': 'knockoutjs/knockout',
+            'knockout': 'knockoutjs/knockout',
+            'mageUtils': 'mage/utils/main',
+            'rjsResolver': 'mage/requirejs/resolver'
+        }
+    },
+    shim: {
+        'jquery/jquery-migrate': ['jquery'],
+        'jquery/jstree/jquery.hotkeys': ['jquery'],
+        'jquery/hover-intent': ['jquery'],
+        'mage/adminhtml/backup': ['prototype'],
+        'mage/captcha': ['prototype'],
+        'mage/new-gallery': ['jquery'],
+        'mage/webapi': ['jquery'],
+        'jquery/ui': ['jquery'],
+        'MutationObserver': ['es6-collections'],
+        'matchMedia': {
+            'exports': 'mediaCheck'
+        },
+        'magnifier/magnifier': ['jquery']
+    },
+    paths: {
+        'jquery/validate': 'jquery/jquery.validate',
+        'jquery/hover-intent': 'jquery/jquery.hoverIntent',
+        'jquery/file-uploader': 'jquery/fileUploader/jquery.fileuploader',
+        'prototype': 'legacy-build.min',
+        'jquery/jquery-storageapi': 'jquery/jquery.storageapi.min',
+        'text': 'mage/requirejs/text',
+        'domReady': 'requirejs/domReady',
+        'spectrum': 'jquery/spectrum/spectrum',
+        'tinycolor': 'jquery/spectrum/tinycolor',
+        'jquery-ui-modules': 'jquery/ui-modules'
+    },
+    deps: [
+        'jquery/jquery-migrate'
+    ],
+    config: {
+        mixins: {
+            'jquery/jstree/jquery.jstree': {
+                'mage/backend/jstree-mixin': true
+            },
+            'jquery': {
+                'jquery/patches/jquery': true
+            }
+        },
+        text: {
+            'headers': {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }
+    }
+};
+
+require(['jquery'], function ($) {
+    'use strict';
+
+    $.noConflict();
+});
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
     map: {
         '*': {
             quickSearch: 'Magento_Search/js/form-mini',
@@ -211,19 +211,11 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            compareList:            'Magento_Catalog/js/list',
-            relatedProducts:        'Magento_Catalog/js/related-products',
-            upsellProducts:         'Magento_Catalog/js/upsell-products',
-            productListToolbarForm: 'Magento_Catalog/js/product/list/toolbar',
-            catalogGallery:         'Magento_Catalog/js/gallery',
-            catalogAddToCart:       'Magento_Catalog/js/catalog-add-to-cart'
-        }
-    },
-    config: {
-        mixins: {
-            'Magento_Theme/js/view/breadcrumbs': {
-                'Magento_Catalog/js/product/breadcrumbs': true
-            }
+            priceBox:             'Magento_Catalog/js/price-box',
+            priceOptionDate:      'Magento_Catalog/js/price-option-date',
+            priceOptionFile:      'Magento_Catalog/js/price-option-file',
+            priceOptions:         'Magento_Catalog/js/price-options',
+            priceUtils:           'Magento_Catalog/js/price-utils'
         }
     }
 };
@@ -239,11 +231,19 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            priceBox:             'Magento_Catalog/js/price-box',
-            priceOptionDate:      'Magento_Catalog/js/price-option-date',
-            priceOptionFile:      'Magento_Catalog/js/price-option-file',
-            priceOptions:         'Magento_Catalog/js/price-options',
-            priceUtils:           'Magento_Catalog/js/price-utils'
+            compareList:            'Magento_Catalog/js/list',
+            relatedProducts:        'Magento_Catalog/js/related-products',
+            upsellProducts:         'Magento_Catalog/js/upsell-products',
+            productListToolbarForm: 'Magento_Catalog/js/product/list/toolbar',
+            catalogGallery:         'Magento_Catalog/js/gallery',
+            catalogAddToCart:       'Magento_Catalog/js/catalog-add-to-cart'
+        }
+    },
+    config: {
+        mixins: {
+            'Magento_Theme/js/view/breadcrumbs': {
+                'Magento_Catalog/js/product/breadcrumbs': true
+            }
         }
     }
 };
@@ -332,8 +332,11 @@ require.config(config);
  */
 
 var config = {
-    paths: {
-        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
+    map: {
+        '*': {
+            requireCookie: 'Magento_Cookie/js/require-cookie',
+            cookieNotices: 'Magento_Cookie/js/notices'
+        }
     }
 };
 
@@ -346,11 +349,8 @@ require.config(config);
  */
 
 var config = {
-    map: {
-        '*': {
-            requireCookie: 'Magento_Cookie/js/require-cookie',
-            cookieNotices: 'Magento_Cookie/js/notices'
-        }
+    paths: {
+        'jquery/jquery-storageapi': 'Magento_Cookie/js/jquery.storageapi.extended'
     }
 };
 
@@ -828,13 +828,11 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            editTrigger: 'mage/edit-trigger',
-            addClass: 'Magento_Translation/js/add-class',
-            'Magento_Translation/add-class': 'Magento_Translation/js/add-class'
+            mageTranslationDictionary: 'Magento_Translation/js/mage-translation-dictionary'
         }
     },
     deps: [
-        'mage/translate-inline'
+        'mageTranslationDictionary'
     ]
 };
 
@@ -849,11 +847,13 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            mageTranslationDictionary: 'Magento_Translation/js/mage-translation-dictionary'
+            editTrigger: 'mage/edit-trigger',
+            addClass: 'Magento_Translation/js/add-class',
+            'Magento_Translation/add-class': 'Magento_Translation/js/add-class'
         }
     },
     deps: [
-        'mageTranslationDictionary'
+        'mage/translate-inline'
     ]
 };
 
@@ -1111,6 +1111,99 @@ var config = {
     }
 };
 
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ var config = {
+ 	map: {
+ 		'*': {
+ 			vesallOwlCarousel: 'Ves_All/lib/owl.carousel/owl.carousel.min',
+ 			vesallBootstrap: 'Ves_All/lib/bootstrap/js/bootstrap.min',
+ 			vesallColorbox: 'Ves_All/lib/colorbox/jquery.colorbox.min',
+ 			vesallFancybox: 'Ves_All/lib/fancybox/jquery.fancybox.pack',
+            vesallBootstrap4: 'Ves_All/lib/bootstrap4/js/bootstrap.min',
+            'popper.js': 'Ves_All/lib/bootstrap4/js/popper.min',
+ 			vesallFancyboxMouseWheel: 'Ves_All/lib/fancybox/jquery.mousewheel-3.0.6.pack'
+ 		}
+ 	},
+ 	shim: {
+        'Ves_All/lib/bootstrap/js/bootstrap.min': {
+            'deps': ['jquery']
+        },
+        'Ves_All/lib/bootstrap4/js/bootstrap.min': {
+            'deps': ['jquery']
+        },
+        'Ves_All/lib/bootstrap4/js/popper.min': {
+            'deps': ['jquery']
+        },
+        'Ves_All/lib/bootstrap/js/bootstrap': {
+            'deps': ['jquery']
+        },
+        'Ves_All/lib/owl.carousel/owl.carousel': {
+            'deps': ['jquery']
+        },
+        'Ves_All/lib/owl.carousel/owl.carousel.min': {
+        	'deps': ['jquery']
+        },
+        'Ves_All/lib/fancybox/jquery.fancybox': {
+            'deps': ['jquery']  
+        },
+        'Ves_All/lib/fancybox/jquery.fancybox.pack': {
+            'deps': ['jquery']  
+        },
+        'Ves_All/lib/colorbox/jquery.colorbox': {
+            'deps': ['jquery']  
+        },
+        'Ves_All/lib/colorbox/jquery.colorbox.min': {
+            'deps': ['jquery']  
+        }
+    }
+ };
+require.config(config);
+})();
+(function() {
+/**
+ * Venustheme
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Venustheme.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.venustheme.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Venustheme
+ * @package    Ves_Megamenu
+ * @copyright  Copyright (c) 2017 Venustheme (http://www.venustheme.com/)
+ * @license    http://www.venustheme.com/LICENSE-1.0.html
+ */
+ var config = {
+ 	paths: {
+        'menu.bootstrap': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min',
+        'scrolltofixed': 'Ves_Megamenu/js/jquery-scrolltofixed-min',
+        'megamenuowlcarousel': 'Ves_All/lib/owl.carousel/owl.carousel.min',
+        'jquery.drilldown': 'Ves_Megamenu/js/jquery.drilldown',
+    },
+    shim: {
+        'menu.bootstrap': {
+            'deps': ['jquery']
+        },
+        'scrolltofixed': {
+            'deps': ['jquery']
+        },
+        'megamenuowlcarousel': {
+            'deps': ['jquery']
+        }
+    }
+};
 require.config(config);
 })();
 (function() {

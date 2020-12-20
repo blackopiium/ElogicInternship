@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608304154;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="catalog_category_view"><body/>
 </handle><handle id="catalogsearch_advanced_index"><body/>
@@ -799,14 +799,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"t
    </referenceBlock>
 </body>
 </handle><handle id="default"><body>
-   <block class="Magento\Framework\Pricing\Render" name="product.price.render.default">
-      <arguments>
-         <argument name="price_render_handle" xsi:type="string">catalog_product_prices</argument>
-         <argument name="use_link_for_as_low_as" xsi:type="boolean">true</argument>
-      </arguments>
-   </block>
-</body>
-</handle><handle id="default"><body>
    <referenceContainer name="before.body.end">
       <block class="Magento\Catalog\Block\FrontendStorageManager" name="frontend-storage-manager" before="-" template="Magento_Catalog::frontend_storage_manager.phtml">
          <arguments>
@@ -863,6 +855,14 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"t
       <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Catalog::js/components.phtml"/>
    </referenceContainer>
    <block class="Magento\Framework\View\Element\Template" name="head.additional" as="head.additional" template="Magento_Theme::html/container.phtml"/>
+</body>
+</handle><handle id="default"><body>
+   <block class="Magento\Framework\Pricing\Render" name="product.price.render.default">
+      <arguments>
+         <argument name="price_render_handle" xsi:type="string">catalog_product_prices</argument>
+         <argument name="use_link_for_as_low_as" xsi:type="boolean">true</argument>
+      </arguments>
+   </block>
 </body>
 </handle><handle id="empty"><body>
    <block class="Magento\Framework\Pricing\Render" name="product.price.render.default">
@@ -7199,7 +7199,56 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"t
       <argument name="viewModel" xsi:type="object">Vertex\AddressValidation\ViewModel\CustomerAddressValidation</argument>
    </arguments>
 </block>
-</layout><handle id="checkout_onepage_success"><body>
+</layout><handle id="default"><body>
+   <referenceBlock name="head.additional">
+      <block class="Magento\Framework\View\Element\Template" name="vesall.head.customcss" as="vesall_head_customcss" template="Ves_All::html/head.phtml"/>
+   </referenceBlock>
+</body>
+</handle><handle id="default"><head>
+   <css src="Ves_All::lib/bootstrap/css/bootstrap-tiny.css"/>
+   <css src="Ves_All::lib/owl.carousel/assets/owl.carousel.css"/>
+   <css src="Ves_All::css/font-awesome.min.css"/>
+   <css src="Ves_Megamenu::css/animate.min.css"/>
+   <css src="Ves_Megamenu::css/bootstrap-tiny.css"/>
+   <css src="Ves_Megamenu::css/carousel.css"/>
+   <css src="Ves_Megamenu::css/styles-m.css"/>
+   <css src="Ves_Megamenu::css/styles-l.css" media="screen and (min-width: 768px)"/>
+</head>
+<body>
+   <referenceBlock name="head.additional">
+      <block class="Magento\Framework\View\Element\Template" name="megamenu.head" template="Ves_Megamenu::html/head.phtml"/>
+   </referenceBlock>
+   <referenceBlock name="store.menu">
+      <block class="Ves\Megamenu\Block\Menu" name="catalog.topnav" template="Ves_Megamenu::topmenu.phtml">
+         <arguments>
+            <argument name="alias" xsi:type="string">top-menu</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+   <referenceContainer name="before.body.end">
+      <block class="Magento\Framework\View\Element\Template" name="magemenu.js" before="-" template="Ves_Megamenu::js.phtml"/>
+   </referenceContainer>
+</body>
+</handle><handle id="megamenu_preview_index" layout="empty"><body>
+   <referenceBlock name="content">
+      <block class="Ves\Megamenu\Block\Preview" name="catalog.topnav.preview"/>
+   </referenceBlock>
+   <referenceContainer name="page.top" remove="true"/>
+   <referenceContainer name="content.top" remove="true"/>
+   <referenceContainer name="top.container" remove="true"/>
+   <referenceContainer name="content.bottom" remove="true"/>
+   <referenceContainer name="content.aside" remove="true"/>
+   <referenceContainer name="header.container" remove="true"/>
+   <referenceContainer name="header.panel" remove="true"/>
+   <referenceContainer name="sidebar.main" remove="true"/>
+   <referenceContainer name="sidebar.additional" remove="true"/>
+   <referenceContainer name="footer" remove="true"/>
+   <referenceContainer name="page.bottom" remove="true"/>
+   <referenceBlock name="authentication-popup" remove="true"/>
+   <referenceBlock name="mgt_developer_toolbar" remove="true"/>
+   <referenceContainer name="legal" remove="true"/>
+</body>
+</handle><handle id="checkout_onepage_success"><body>
    <referenceContainer name="order.success.additional.info">
       <block class="Yotpo\Yotpo\Block\Conversion" name="yotpo_conversion" template="Yotpo_Yotpo::conversion.phtml" cacheable="false" ifconfig="yotpo/settings/active"/>
    </referenceContainer>
@@ -7304,8 +7353,14 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"t
    <move element="checkout.cart.shortcut.buttons" destination="checkout.cart.methods" after="checkout.cart.methods.onepage.bottom"/>
 </body>
 </handle><handle id="default"><body>
+   <move element="navigation.sections" destination="header-wrapper"/>
+   <referenceContainer name="header-wrapper">
+      <container name="header-icons-block" htmlTag="div" htmlClass="header-icons" after="navigation.sections"/>
+   </referenceContainer>
+   <move element="minicart" destination="header-icons-block"/>
+   <move element="header.links" destination="header-icons-block"/>
+   <move element="top.search" destination="header-icons-block"/>
    <referenceBlock name="form.subscribe" remove="true"/>
-   <referenceBlock name="top.search" remove="true"/>
    <referenceBlock name="register-link" remove="true"/>
    <referenceBlock name="footer_links" remove="true"/>
    <referenceContainer name="footer">
@@ -7337,6 +7392,31 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1607966059;s:6:"expire";i:9999999999;s:4:"t
 <body>
       
     </body>
+</handle><handle id="default"><head>
+   <css src="Ves_All::lib/bootstrap/css/bootstrap-tiny.css"/>
+   <css src="Ves_All::lib/owl.carousel/assets/owl.carousel.css"/>
+   <css src="Ves_All::css/font-awesome.min.css"/>
+   <css src="Ves_Megamenu::css/animate.min.css"/>
+   <css src="Ves_Megamenu::css/bootstrap-tiny.css"/>
+   <css src="Ves_Megamenu::css/carousel.css"/>
+   <css src="Ves_Megamenu::css/styles-m.css"/>
+   <css src="Ves_Megamenu::css/styles-l.css" media="screen and (min-width: 768px)"/>
+</head>
+<body>
+   <referenceBlock name="head.additional">
+      <block class="Magento\Framework\View\Element\Template" name="megamenu.head" template="Ves_Megamenu::html/head.phtml"/>
+   </referenceBlock>
+   <referenceBlock name="store.menu">
+      <block class="Ves\Megamenu\Block\Menu" name="catalog.topnav" template="Ves_Megamenu::topmenu.phtml">
+         <arguments>
+            <argument name="alias" xsi:type="string">navigation-elogic-menu</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+   <referenceContainer name="before.body.end">
+      <block class="Magento\Framework\View\Element\Template" name="magemenu.js" before="-" template="Ves_Megamenu::js.phtml"/>
+   </referenceContainer>
+</body>
 </handle><layout id="1column"><update handle="empty"/>
 <referenceContainer name="page.wrapper">
    <container name="header.container" as="header_container" label="Page Header Container" htmlTag="header" htmlClass="page-header" before="main.content"/>

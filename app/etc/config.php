@@ -314,6 +314,9 @@ return [
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
         'Vertex_AddressValidation' => 1,
+        'Ves_All' => 1,
+        'Ves_Megamenu' => 1,
+        'Ves_Setup' => 1,
         'Yotpo_Yotpo' => 1
     ]
 ];

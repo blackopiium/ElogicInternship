@@ -2857,6 +2857,14 @@
         'instance' => 'Vertex\\Tax\\Model\\Plugin\\InvoiceRepositoryPlugin',
       ),
     ),
+    'Magento\\Framework\\Webapi\\ServiceOutputProcessor' => 
+    array (
+      'ves_megamenu_webapi_service_output_processor_plugin' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Ves\\Megamenu\\Plugin\\Webapi\\ServiceOutputProcessorPlugin',
+      ),
+    ),
     'Magento\\Catalog\\Block\\Product\\ListProduct' => 
     array (
       'yotpo_yotpo_catalog_block_product_listproduct_plugin' => 
@@ -9072,6 +9080,15 @@
         'instance' => 'Vertex\\Tax\\Model\\Plugin\\InvoiceRepositoryPlugin',
       ),
     ),
+    'Magento\\Framework\\Webapi\\ServicePayloadConverterInterface' => NULL,
+    'Magento\\Framework\\Webapi\\ServiceOutputProcessor' => 
+    array (
+      'ves_megamenu_webapi_service_output_processor_plugin' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Ves\\Megamenu\\Plugin\\Webapi\\ServiceOutputProcessorPlugin',
+      ),
+    ),
     'Magento\\Catalog\\Block\\Product\\ListProduct' => 
     array (
       'add_product_object_to_image_data_array' => 
@@ -14368,6 +14385,13 @@
       4 => 
       array (
         0 => 'get_vertex_invoice_item_attributes',
+      ),
+    ),
+    'Magento\\Framework\\Webapi\\ServiceOutputProcessor_process___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'ves_megamenu_webapi_service_output_processor_plugin',
       ),
     ),
     'Magento\\Catalog\\Block\\Product\\ListProduct_getImage___self' => 
