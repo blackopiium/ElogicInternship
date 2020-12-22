@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608304154;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608568556;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="catalog_category_view"><body/>
 </handle><handle id="catalogsearch_advanced_index"><body/>
@@ -7386,26 +7386,7 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608304154;s:6:"expire";i:9999999999;s:4:"t
       </block>
    </referenceContainer>
 </body>
-</handle><handle id="default_head_blocks"><head>
-       
-    </head>
-<body>
-      
-    </body>
-</handle><handle id="default"><head>
-   <css src="Ves_All::lib/bootstrap/css/bootstrap-tiny.css"/>
-   <css src="Ves_All::lib/owl.carousel/assets/owl.carousel.css"/>
-   <css src="Ves_All::css/font-awesome.min.css"/>
-   <css src="Ves_Megamenu::css/animate.min.css"/>
-   <css src="Ves_Megamenu::css/bootstrap-tiny.css"/>
-   <css src="Ves_Megamenu::css/carousel.css"/>
-   <css src="Ves_Megamenu::css/styles-m.css"/>
-   <css src="Ves_Megamenu::css/styles-l.css" media="screen and (min-width: 768px)"/>
-</head>
-<body>
-   <referenceBlock name="head.additional">
-      <block class="Magento\Framework\View\Element\Template" name="megamenu.head" template="Ves_Megamenu::html/head.phtml"/>
-   </referenceBlock>
+</handle><handle id="default"><body>
    <referenceBlock name="store.menu">
       <block class="Ves\Megamenu\Block\Menu" name="catalog.topnav" template="Ves_Megamenu::topmenu.phtml">
          <arguments>
@@ -7413,9 +7394,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608304154;s:6:"expire";i:9999999999;s:4:"t
          </arguments>
       </block>
    </referenceBlock>
-   <referenceContainer name="before.body.end">
-      <block class="Magento\Framework\View\Element\Template" name="magemenu.js" before="-" template="Ves_Megamenu::js.phtml"/>
-   </referenceContainer>
 </body>
 </handle><layout id="1column"><update handle="empty"/>
 <referenceContainer name="page.wrapper">

@@ -81,7 +81,7 @@
 
         .my-dots li.slick-active button:before {
             opacity: .75;
-            color: @color-black;
+            .lib-css(color, @color-black);
         }
 
     }
@@ -126,7 +126,7 @@
             > .item.title {
                 .lib-font-size(14);
                 .lib-css(font-weight, @font-weight__regular);
-                .lib-css(color, #aaaaaa);
+                .lib-css(color, @color-elogic-grey4);
                 font-family: @font-family-name__base;
                 font-style: normal;
                 letter-spacing: normal;
@@ -161,7 +161,7 @@
         .lib-font-size(30);
         .lib-css(font-weight, @font-weight__light);
         .lib-css(color, @color-black);
-        font-family: 'Rubik', sans-serif;
+        font-family: @font-family-name__base;
         font-style: normal;
         letter-spacing: normal;
         line-height: normal;
@@ -395,7 +395,7 @@
             .lib-css(color, @color-black);
             .lib-css(font-weight, @font-weight__bold);
             .lib-font-size(18);
-            font-family:@font-family-name__base;
+            font-family: @font-family-name__base;
             font-style: normal;
             letter-spacing: normal;
             line-height: 26px;
@@ -449,7 +449,7 @@
                 .lib-css(color, @color-elogic-grey2);
                 .lib-css(font-weight, @font-weight__regular);
                 .lib-font-size(14);
-                font-family :@font-family-name__base;
+                font-family: @font-family-name__base;
                 font-style: normal;
                 letter-spacing: normal;
                 line-height: normal;
@@ -502,8 +502,8 @@
     }
 
     .homepage-newsletter-wrapper {
-        border-top: 1px solid @color-elogic-grey7 !important;
-        border-bottom: 1px solid @color-elogic-grey7 !important;
+        border-top: 1px solid @color-elogic-grey7 !important; //    override default page builder style
+        border-bottom: 1px solid @color-elogic-grey7 !important; //    override default page builder style
         width: 100%;
         height: 350px;
         margin-top: 100px;
@@ -550,7 +550,7 @@
     }
 
     .page-footer {
-       background-color: @color-white;
+       .lib-css(background-color, @color-white);
     }
 
     .footer.content {
@@ -570,7 +570,7 @@
             .footer-contact-information {
                 margin-top: 8%;
                 .lib-vendor-prefix-display();
-                flex-wrap: wrap;
+                .lib-vendor-prefix-flex-wrap();
                 justify-content: center;
                 width: 100%;
 
@@ -591,7 +591,7 @@
                 .links_container {
                     .lib-vendor-prefix-display();
                     justify-content: center;
-                    flex-wrap: wrap;
+                    .lib-vendor-prefix-flex-wrap();
 
                     li {
                         padding: 30px;
@@ -620,7 +620,7 @@
                 .icons_nav_container {
                     .lib-vendor-prefix-display();
                     justify-content: center;
-                    flex-wrap: wrap;
+                    .lib-vendor-prefix-flex-wrap();
 
                     .li_icons {
                         padding: 25px;
@@ -724,7 +724,7 @@
             .lib-css(color, @color-white);
             position: absolute;
             opacity: 0.35;
-            font-family:@font-family-name__base;
+            font-family: @font-family-name__base;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
@@ -767,7 +767,7 @@
             .lib-css(font-weight, @font-weight__bold);
             .lib-font-size(14);
             position: absolute;
-            font-family: 'Rubik', sans-serif;
+            font-family: @font-family-name__base;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
@@ -787,7 +787,7 @@
 
             > .item.title > .switch {
                 border: 0;
-                .lib-css(background, transparent);
+                .lib-css(background-color, transparent);
             }
 
             > .item.title > .switch:visited {
@@ -840,14 +840,14 @@
         .product-item-actions .actions-primary + .actions-secondary > .action {
             line-height: 35px;
             text-align: center;
-            color: @color-elogic-grey2;
+            .lib-css(color, @color-elogic-grey2);
             width: 15px;
         }
     }
 
     .homepage-newsletter-wrapper {
-        border-top: 1px solid @color-elogic-grey7 !important;
-        border-bottom: 1px solid @color-elogic-grey7 !important;
+        border-top: 1px solid @color-elogic-grey7 !important; //    override default page builder style
+        border-bottom: 1px solid @color-elogic-grey7 !important; //    override default page builder style
         width: 100%;
         height: 350px;
         margin-top: 100px;
@@ -857,7 +857,7 @@
             .lib-css(font-weight, @font-weight__regular);
             .lib-font-size(24);
             padding-top: 100px;
-            font-family:@font-family-name__base;
+            font-family: @font-family-name__base;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
@@ -885,7 +885,7 @@
     }
 
     .page-footer {
-        .lib-css(background, @color-white) !important; //    override default page builder style
+        .lib-css(background-color, @color-white) !important; //    override default page builder style
         margin-top: auto;
         padding-bottom: 0 !important; //    override default page builder style
     }
@@ -978,7 +978,7 @@
                     position: absolute;
 
                     span {
-                            padding: 10px;
+                        padding: 10px;
                         display: inline-block;
                         }
                 }
@@ -1004,7 +1004,7 @@
                     .lib-font-size(16);
                     justify-content: left;
                     padding-left: 10px;
-                    font-family:@font-family-name__base;
+                    font-family: @font-family-name__base;
                     font-style: normal;
                     letter-spacing: normal;
                     line-height: normal;
@@ -1017,7 +1017,7 @@
                     .lib-css(font-weight, @font-weight__regular);
                     .lib-font-size(14);
                     padding-left: 10px;
-                    font-family: 'Rubik', sans-serif;
+                    font-family: @font-family-name__base;
                     font-style: normal;
                     letter-spacing: normal;
                     line-height: normal;
@@ -1031,6 +1031,53 @@
         .lib-visually-hidden-reset();
     }
 
+    .selectize-control {
+        width: 139px;
+    }
+
+    .selectize-dropdown {
+        .active {
+            .lib-css(background-color, @color-elogic-grey8);
+            .lib-css(color, @color-white);
+        }
+    }
+
+    .selectize-dropdown [data-selectable].option {
+        padding: 10px;
+    }
+
+    .sorter-label {
+        padding: 10px;
+    }
+
+    .option.selected {
+        .lib-css(background-color, @color-elogic-dropdown-selected);
+        .lib-css(color, @color-elogic-dropdown);
+    }
+
+    .selectize-control.single.selectize-input:after {
+       display: none;
+    }
+
+    .selectize-input.items.full.has-options.has-items {
+       display: none;
+    }
+
+    .selectize-dropdown.single.sorter-options {
+        width: 139px !important; //    override default page builder style
+        top: 10px !important; //    override default page builder style
+        border: 1px solid @color-elogic-grey4;
+    }
+
+    .action.sorter-action.sort-asc {
+        top: -23px;
+        left: 44px;
+    }
+
+    .action.sorter-action.sort-desc {
+        top: -23px;
+        left: 44px;
+    }
 }
 
 //
@@ -1039,8 +1086,8 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .homepage-newsletter-wrapper {
-        border-top: 1px solid @color-elogic-grey7!important;
-        border-bottom: 1px solid @color-elogic-grey7 !important;
+        border-top: 1px solid @color-elogic-grey7 !important; //    override default page builder style
+        border-bottom: 1px solid @color-elogic-grey7 !important; //    override default page builder style
         width: 100%;
         height: 350px;
         margin-top: 100px;
@@ -1050,7 +1097,7 @@
             .lib-css(font-weight, @font-weight__regular);
             .lib-font-size(24);
             padding-top: 100px;
-            font-family:@font-family-name__base;
+            font-family: @font-family-name__base;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
@@ -1085,7 +1132,7 @@
         .featured-content-container {
             .lib-vendor-prefix-display();
             justify-content: space-evenly;
-            flex-wrap: wrap;
+            .lib-vendor-prefix-flex-wrap();
             margin-top: 60px;
 
             .featured-content-container-block {
@@ -1152,7 +1199,7 @@
 
         .action.tocart.primary {
             border: none;
-            color: @color-black;
+            .lib-css(color, @color-black);
             .lib-css(background-color, @color-white);
             border-right: 1px solid @color-elogic-grey3;
 
@@ -1169,7 +1216,7 @@
         .product-item-actions .actions-primary + .actions-secondary > .action {
             line-height: 35px;
             text-align: center;
-            color: @color-elogic-grey2;
+            .lib-css(color, @color-elogic-grey2);
             width: 15px;
         }
 
@@ -1196,7 +1243,7 @@
         .categories-content {
             .lib-vendor-prefix-display();
             justify-content: space-evenly;
-            flex-wrap: wrap;
+            .lib-vendor-prefix-flex-wrap();
             margin-top: 10%;
 
             .background-after {

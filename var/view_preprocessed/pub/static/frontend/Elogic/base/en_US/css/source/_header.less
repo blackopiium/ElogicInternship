@@ -35,14 +35,14 @@
     }
 
     .block.ves-megamenu .nav-item.active>a {
-        background: transparent;
+        .lib-css(background, transparent);
         color: #FFF;
     }
 
     .ves-megamenu .navigation .level0 .submenu a {
         &:hover,
         &.ui-state-focus {
-           background: transparent;
+            .lib-css(background, transparent);
         }
     }
 
@@ -132,8 +132,10 @@
         margin-bottom: 0;
     }
 
-    .logo {
-        margin: -8px auto 0px 0 !important; //    override default page builder style
+    header.content {
+        .logo {
+            margin: -8px auto 0px 0 !important; //    override default page builder style
+        }
     }
 
     input {

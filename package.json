@@ -38,5 +38,9 @@
         "strip-json-comments": "~2.0.1",
         "time-grunt": "~1.4.0",
         "underscore": "~1.8.0"
+    },
+    "dependencies": {
+        "microplugin": "0.0.3",
+        "sifter": "^0.5.4"
     }
 }
