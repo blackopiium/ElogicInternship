@@ -17,6 +17,15 @@ class Interceptor extends \Magento\Checkout\Model\Cart implements \Magento\Frame
     /**
      * {@inheritdoc}
      */
+    public function addProduct($productInfo, $requestInfo = null)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'addProduct');
+        return $pluginInfo ? $this->___callPlugins('addProduct', func_get_args(), $pluginInfo) : parent::addProduct($productInfo, $requestInfo);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function save()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'save');

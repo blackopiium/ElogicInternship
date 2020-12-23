@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608568556;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608727021;s:6:"expire";i:9999999999;s:4:"tags";s:37:"181_LAYOUT_GENERAL_CACHE_TAG,181_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="catalog_category_view"><body/>
 </handle><handle id="catalogsearch_advanced_index"><body/>
@@ -6895,6 +6895,427 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608568556;s:6:"expire";i:9999999999;s:4:"t
       <block class="Klarna\Onsitemessaging\Block\Cart" name="klarna.osm.cart" as="klarna_osm_cart" template="Klarna_Onsitemessaging::html/placement/cart.phtml" after="-"/>
    </referenceContainer>
 </body>
+</handle><handle id="default"><body>
+   <referenceContainer name="head.additional">
+      <block class="Mirasvit\Core\Block\FontAwesome" name="font-awesome" template="Mirasvit_Core::font_awesome.phtml"/>
+      <block class="Mirasvit\Core\Block\CustomCss" name="mirasvit-custom-css" template="Mirasvit_Core::custom_css.phtml"/>
+   </referenceContainer>
+</body>
+</handle><handle id="catalog_product_view"><body>
+   <referenceBlock name="product.info.social">
+      <block class="Mirasvit\Giftr\Block\Item\Add" name="giftr.item.add-to-link" template="Mirasvit_Giftr::item/add_to/product.phtml" before="product.info.mailto">
+         <block class="Mirasvit\Giftr\Block\Item\Add" name="giftr.list" as="giftrDropdown" template="Mirasvit_Giftr::item/add_to/list.phtml"/>
+         <arguments>
+            <argument name="mode" xsi:type="string">add</argument>
+            <argument name="label" translate="true" xsi:type="string">Gift Registry</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+</body>
+</handle><handle id="checkout_index_index" layout="1column"><body>
+   <referenceContainer name="content">
+      <block class="Mirasvit\Giftr\Block\Onepage" name="giftr.checkout.root" after="checkout.root" template="Mirasvit_Giftr::checkout/onepage.phtml" cacheable="false"/>
+   </referenceContainer>
+</body>
+</handle><handle id="customer_account"><body>
+   <referenceBlock name="customer_account_navigation">
+      <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-giftr-link">
+         <arguments>
+            <argument name="path" xsi:type="string">giftr/registry</argument>
+            <argument name="label" xsi:type="string">My Gift Registries</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+</body>
+</handle><handle id="default"><body>
+   <referenceBlock name="top.links">
+      <block class="Magento\Framework\View\Element\Html\Link" name="giftr-top-link" after="my-account-link">
+         <arguments>
+            <argument name="path" xsi:type="string">giftr/registry</argument>
+            <argument name="label" translate="true" xsi:type="string">My Gift Registry</argument>
+            <argument name="title" translate="true" xsi:type="string">My Gift Registry</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+   <referenceBlock name="footer_links">
+      <block class="Magento\Framework\View\Element\Html\Link" name="giftr-footer-link">
+         <arguments>
+            <argument name="path" xsi:type="string">giftr/search/result</argument>
+            <argument name="label" translate="true" xsi:type="string">Gift Registry Search</argument>
+            <argument name="title" translate="true" xsi:type="string">Gift Registry Search</argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+</body>
+</handle><handle id="giftr_container"><body>
+   <referenceContainer name="content">
+      <container name="giftr.container" htmlTag="div" htmlClass="giftr-container"/>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_item_manage"><update handle="customer_account"/>
+<update handle="giftr_navigation"/>
+<update handle="giftr_container"/>
+<head>
+   <title>Manage Gift Registry Items</title>
+</head>
+<body>
+   <referenceContainer name="giftr.container">
+      <block class="Mirasvit\Giftr\Block\Item\Manage" name="giftr.item.manage" as="giftrItemManage" template="Mirasvit_Giftr::item/manage.phtml" cacheable="false">
+         <block class="Mirasvit\Giftr\Block\Item\Manage" name="giftr.item.items" as="giftrItemItems" template="Mirasvit_Giftr::item/manage/items.phtml" cacheable="false">
+            <action method="setMode">
+               <argument name="mode" xsi:type="string">grid</argument>
+            </action>
+            <block class="Magento\Catalog\Block\Product\ProductList\Toolbar" name="product_list_toolbar" template="Magento_Catalog::product/list/toolbar.phtml">
+               <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager"/>
+            </block>
+            <action method="setToolbarBlockName">
+               <argument name="name" xsi:type="string">product_list_toolbar</argument>
+            </action>
+            <block class="Mirasvit\Giftr\Block\Item\Options" name="giftr.item.options" cacheable="false"/>
+         </block>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_navigation"><body>
+   <referenceBlock name="customer_account_navigation">
+      <action method="setActive">
+         <argument name="path" xsi:type="string">giftr/registry</argument>
+      </action>
+   </referenceBlock>
+   <referenceContainer name="content">
+      <block class="Magento\Framework\View\Element\Template" name="giftr.navigation" template="Mirasvit_Giftr::navigation.phtml">
+         <arguments>
+            <argument name="items" xsi:type="array">
+               <item name="*/registry/edit/" translate="true" xsi:type="string">My Gift Registry</item>
+               <item name="*/item/manage/" translate="true" xsi:type="string">Manage Items</item>
+               <item name="*/registry/share/" translate="true" xsi:type="string">Share with Friends</item>
+               <item name="*/registry/view/" translate="true" xsi:type="string">Guest View</item>
+            </argument>
+         </arguments>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_registry_edit"><update handle="customer_account"/>
+<update handle="giftr_navigation"/>
+<update handle="giftr_container"/>
+<head>
+   <title>Edit Gift Registry</title>
+</head>
+<body>
+   <referenceContainer name="giftr.container">
+      <block class="Magento\Framework\View\Element\Html\Calendar" name="html_calendar" as="html_calendar" template="Magento_Theme::js/calendar.phtml" before="-"/>
+      <block class="Mirasvit\Giftr\Block\Registry\Form" name="giftr.registry.form" template="Mirasvit_Giftr::registry/edit.phtml" cacheable="false">
+         <block class="Mirasvit\Giftr\Block\Registry\Form" name="registry.edit" template="Mirasvit_Giftr::registry/form/main.phtml">
+            <action method="setBackUrl">
+               <argument name="backUrl" xsi:type="string">*/*/</argument>
+            </action>
+         </block>
+         <action method="setActionUrl">
+            <argument name="actionUrl" xsi:type="string">*/*/save</argument>
+         </action>
+         <arguments>
+            <argument name="jsLayout" xsi:type="array">
+               <item name="components" xsi:type="array">
+                  <item name="giftr__form" xsi:type="array">
+                     <item name="component" xsi:type="string">Mirasvit_Giftr/js/giftr</item>
+                     <item name="config" xsi:type="array">
+                        <item name="chosenTypeId" xsi:type="boolean">0</item>
+                        <item name="coRegistrantExists" xsi:type="boolean">0</item>
+                        <item name="coRegistrantBtnText" translate="true" xsi:type="string">Add Co-Registrant</item>
+                        <item name="popUpForm" xsi:type="array">
+                           <item name="element" xsi:type="string">#giftr-new-shipping-address</item>
+                           <item name="options" xsi:type="array">
+                              <item name="type" xsi:type="string">popup</item>
+                              <item name="responsive" xsi:type="boolean">true</item>
+                              <item name="innerScroll" xsi:type="boolean">true</item>
+                              <item name="title" translate="true" xsi:type="string">Gift Registry Shipping Address</item>
+                              <item name="trigger" xsi:type="string">giftr-new-shipping-address</item>
+                              <item name="saveAddressUrl" path="*/*/saveShipping" xsi:type="url"/>
+                              <item name="shippingSelectId" xsi:type="string">#shipping_address_id</item>
+                              <item name="buttons" xsi:type="array">
+                                 <item name="save" xsi:type="array">
+                                    <item name="text" translate="true" xsi:type="string">Save Address</item>
+                                    <item name="class" xsi:type="string">action primary action-save-address</item>
+                                 </item>
+                                 <item name="cancel" xsi:type="array">
+                                    <item name="text" translate="true" xsi:type="string">Cancel</item>
+                                    <item name="class" xsi:type="string">action secondary action-hide-popup</item>
+                                 </item>
+                              </item>
+                           </item>
+                        </item>
+                     </item>
+                     <item name="provider" xsi:type="string">addressProvider</item>
+                     <item name="children" xsi:type="array">
+                        <item name="shipping-address-fieldset" xsi:type="array">
+                           <item name="component" xsi:type="string">uiComponent</item>
+                           <item name="config" xsi:type="array">
+                              <item name="deps" xsi:type="array">
+                                 <item name="0" xsi:type="string">addressProvider</item>
+                              </item>
+                           </item>
+                           <item name="displayArea" xsi:type="string">additional-fieldsets</item>
+                           <item name="children" xsi:type="array">
+                              <item name="region" xsi:type="array">
+                                 <item name="visible" xsi:type="boolean">false</item>
+                              </item>
+                              <item name="region_id" xsi:type="array">
+                                 <item name="component" xsi:type="string">Magento_Ui/js/form/element/region</item>
+                                 <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">ui/form/field</item>
+                                    <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                    <item name="customEntry" xsi:type="string">shippingAddress.region</item>
+                                 </item>
+                                 <item name="validation" xsi:type="array">
+                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                 </item>
+                                 <item name="filterBy" xsi:type="array">
+                                    <item name="target" xsi:type="string">${ $.provider }:${ $.parentScope }.country_id</item>
+                                    <item name="field" xsi:type="string">country_id</item>
+                                 </item>
+                              </item>
+                              <item name="postcode" xsi:type="array">
+                                 <item name="component" xsi:type="string">Magento_Ui/js/form/element/post-code</item>
+                                 <item name="validation" xsi:type="array">
+                                    <item name="required-entry" xsi:type="string">true</item>
+                                 </item>
+                              </item>
+                              <item name="company" xsi:type="array">
+                                 <item name="validation" xsi:type="array">
+                                    <item name="min_text_length" xsi:type="number">0</item>
+                                 </item>
+                              </item>
+                              <item name="fax" xsi:type="array">
+                                 <item name="validation" xsi:type="array">
+                                    <item name="min_text_length" xsi:type="number">0</item>
+                                 </item>
+                              </item>
+                              <item name="country_id" xsi:type="array">
+                                 <item name="sortOrder" xsi:type="string">115</item>
+                              </item>
+                              <item name="telephone" xsi:type="array">
+                                 <item name="config" xsi:type="array">
+                                    <item name="tooltip" xsi:type="array">
+                                       <item name="description" translate="true" xsi:type="string">For delivery questions.</item>
+                                    </item>
+                                 </item>
+                              </item>
+                           </item>
+                        </item>
+                     </item>
+                  </item>
+                  <item name="addressProvider" xsi:type="array">
+                     <item name="component" xsi:type="string">uiComponent</item>
+                  </item>
+               </item>
+            </argument>
+         </arguments>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_registry_index"><update handle="customer_account"/>
+<head>
+   <title>My Gift Registries</title>
+</head>
+<body>
+   <referenceContainer name="content">
+      <block class="Mirasvit\Giftr\Block\Registry\Listing" name="giftr.registry.list" template="Mirasvit_Giftr::registry/list.phtml" cacheable="false"/>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_registry_new"><update handle="customer_account"/>
+<update handle="giftr_container"/>
+<head>
+   <title>Create Gift Registry</title>
+</head>
+<body>
+   <referenceBlock name="customer_account_navigation">
+      <action method="setActive">
+         <argument name="path" xsi:type="string">giftr/registry</argument>
+      </action>
+   </referenceBlock>
+   <referenceContainer name="giftr.container">
+      <block class="Magento\Framework\View\Element\Html\Calendar" name="html_calendar" as="html_calendar" template="Magento_Theme::js/calendar.phtml" before="-"/>
+      <block class="Mirasvit\Giftr\Block\Registry\NewAction" name="giftr.registry.new" template="Mirasvit_Giftr::registry/newaction.phtml" cacheable="false">
+         <block class="Mirasvit\Giftr\Block\Registry\NewAction" name="registry.new.step1" template="Mirasvit_Giftr::registry/form/step1.phtml"/>
+         <block class="Mirasvit\Giftr\Block\Registry\NewAction" name="registry.new.step2" template="Mirasvit_Giftr::registry/form/main.phtml">
+            <action method="setBackUrl">
+               <argument name="backUrl" xsi:type="string">*/*/*</argument>
+            </action>
+         </block>
+         <arguments>
+            <argument name="jsLayout" xsi:type="array">
+               <item name="components" xsi:type="array">
+                  <item name="giftr__form" xsi:type="array">
+                     <item name="component" xsi:type="string">Mirasvit_Giftr/js/giftr</item>
+                     <item name="config" xsi:type="array">
+                        <item name="chosenTypeId" xsi:type="boolean">0</item>
+                        <item name="coRegistrantExists" xsi:type="boolean">0</item>
+                        <item name="coRegistrantBtnText" translate="true" xsi:type="string">Add Co-Registrant</item>
+                        <item name="popUpForm" xsi:type="array">
+                           <item name="element" xsi:type="string">#giftr-new-shipping-address</item>
+                           <item name="options" xsi:type="array">
+                              <item name="type" xsi:type="string">popup</item>
+                              <item name="responsive" xsi:type="boolean">true</item>
+                              <item name="innerScroll" xsi:type="boolean">true</item>
+                              <item name="title" translate="true" xsi:type="string">Gift Registry Shipping Address</item>
+                              <item name="trigger" xsi:type="string">giftr-new-shipping-address</item>
+                              <item name="saveAddressUrl" path="*/*/saveShipping" xsi:type="url"/>
+                              <item name="shippingSelectId" xsi:type="string">#shipping_address_id</item>
+                              <item name="buttons" xsi:type="array">
+                                 <item name="save" xsi:type="array">
+                                    <item name="text" translate="true" xsi:type="string">Save Address</item>
+                                    <item name="class" xsi:type="string">action primary action-save-address</item>
+                                 </item>
+                                 <item name="cancel" xsi:type="array">
+                                    <item name="text" translate="true" xsi:type="string">Cancel</item>
+                                    <item name="class" xsi:type="string">action secondary action-hide-popup</item>
+                                 </item>
+                              </item>
+                           </item>
+                        </item>
+                     </item>
+                     <item name="provider" xsi:type="string">addressProvider</item>
+                     <item name="children" xsi:type="array">
+                        <item name="shipping-address-fieldset" xsi:type="array">
+                           <item name="component" xsi:type="string">uiComponent</item>
+                           <item name="config" xsi:type="array">
+                              <item name="deps" xsi:type="array">
+                                 <item name="0" xsi:type="string">addressProvider</item>
+                              </item>
+                           </item>
+                           <item name="displayArea" xsi:type="string">additional-fieldsets</item>
+                           <item name="children" xsi:type="array">
+                              <item name="region" xsi:type="array">
+                                 <item name="visible" xsi:type="boolean">false</item>
+                              </item>
+                              <item name="region_id" xsi:type="array">
+                                 <item name="component" xsi:type="string">Magento_Ui/js/form/element/region</item>
+                                 <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">ui/form/field</item>
+                                    <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                    <item name="customEntry" xsi:type="string">shippingAddress.region</item>
+                                 </item>
+                                 <item name="validation" xsi:type="array">
+                                    <item name="required-entry" xsi:type="boolean">true</item>
+                                 </item>
+                                 <item name="filterBy" xsi:type="array">
+                                    <item name="target" xsi:type="string">${ $.provider }:${ $.parentScope }.country_id</item>
+                                    <item name="field" xsi:type="string">country_id</item>
+                                 </item>
+                              </item>
+                              <item name="postcode" xsi:type="array">
+                                 <item name="component" xsi:type="string">Magento_Ui/js/form/element/post-code</item>
+                                 <item name="validation" xsi:type="array">
+                                    <item name="required-entry" xsi:type="string">true</item>
+                                 </item>
+                              </item>
+                              <item name="company" xsi:type="array">
+                                 <item name="validation" xsi:type="array">
+                                    <item name="min_text_length" xsi:type="number">0</item>
+                                 </item>
+                              </item>
+                              <item name="fax" xsi:type="array">
+                                 <item name="validation" xsi:type="array">
+                                    <item name="min_text_length" xsi:type="number">0</item>
+                                 </item>
+                              </item>
+                              <item name="country_id" xsi:type="array">
+                                 <item name="sortOrder" xsi:type="string">115</item>
+                              </item>
+                              <item name="telephone" xsi:type="array">
+                                 <item name="config" xsi:type="array">
+                                    <item name="tooltip" xsi:type="array">
+                                       <item name="description" translate="true" xsi:type="string">For delivery questions.</item>
+                                    </item>
+                                 </item>
+                              </item>
+                           </item>
+                        </item>
+                     </item>
+                  </item>
+                  <item name="addressProvider" xsi:type="array">
+                     <item name="component" xsi:type="string">uiComponent</item>
+                  </item>
+               </item>
+            </argument>
+         </arguments>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_registry_share"><update handle="customer_account"/>
+<update handle="giftr_navigation"/>
+<update handle="giftr_container"/>
+<head>
+   <title>Share Giftr Registry with Friends</title>
+</head>
+<body>
+   <referenceContainer name="head.additional">
+      <block class="Mirasvit\Giftr\Block\Registry\View" name="giftr.registry.meta" as="giftrMeta" template="Mirasvit_Giftr::registry/view/meta.phtml"/>
+   </referenceContainer>
+   <referenceContainer name="giftr.container">
+      <block class="Mirasvit\Giftr\Block\Registry\Share" name="giftr.registry.share" as="giftrShare" template="Mirasvit_Giftr::registry/share.phtml"/>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_registry_view" layout="1column"><update handle="giftr_container"/>
+<head>
+   <title>Welcome to Gift Registry</title>
+</head>
+<body>
+   <referenceContainer name="head.additional">
+      <block class="Mirasvit\Giftr\Block\Registry\View" name="giftr.registry.meta" as="giftrMeta" template="Mirasvit_Giftr::registry/view/meta.phtml"/>
+   </referenceContainer>
+   <referenceContainer name="sidebar.additional">
+      <referenceBlock name="wishlist_sidebar" remove="true"/>
+      <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+      <block class="Mirasvit\Giftr\Block\Registry\Wish" name="giftr.wish" template="Mirasvit_Giftr::registry/view/wish.phtml"/>
+   </referenceContainer>
+   <referenceContainer name="columns.top">
+      <block class="Mirasvit\Giftr\Block\Registry\View" name="giftr.item.info.general" as="giftrItemGeneral" template="Mirasvit_Giftr::registry/view/general.phtml">
+         <block class="Mirasvit\Giftr\Block\Registry\Share" name="giftr.item.info.share" as="giftrItemShare" template="Mirasvit_Giftr::registry/view/share.phtml"/>
+      </block>
+   </referenceContainer>
+   <referenceContainer name="giftr.container">
+      <block class="Mirasvit\Giftr\Block\Registry\View" name="giftr.registry.view" as="giftr.registry.view" template="Mirasvit_Giftr::registry/view.phtml" cacheable="false">
+         <block class="Magento\Framework\View\Element\Template" name="giftr.navigation" as="giftrNav" template="Mirasvit_Giftr::navigation.phtml">
+            <arguments>
+               <argument name="items" xsi:type="array">
+                  <item name="*/registry/edit/" translate="true" xsi:type="string">My Gift Registry</item>
+                  <item name="*/item/manage/" translate="true" xsi:type="string">Manage Items</item>
+                  <item name="*/registry/share/" translate="true" xsi:type="string">Share with Friends</item>
+                  <item name="*/registry/view/" translate="true" xsi:type="string">Guest View</item>
+               </argument>
+            </arguments>
+         </block>
+         <block class="Mirasvit\Giftr\Block\Item\Manage" name="giftr.item.info" as="giftrItemInfo" template="Mirasvit_Giftr::registry/view/items.phtml">
+            <block class="Mirasvit\Giftr\Block\Item\Options" name="giftr.item.options"/>
+         </block>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="giftr_search_result" layout="1column"><update handle="giftr_container"/>
+<head>
+   <title>Gift Registry Search</title>
+</head>
+<body>
+   <referenceContainer name="sidebar.additional">
+      <referenceBlock name="wishlist_sidebar" remove="true"/>
+      <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+   </referenceContainer>
+   <referenceContainer name="giftr.container">
+      <block class="Mirasvit\Giftr\Block\Search\Result" name="giftr.search.result" as="giftrSearchResult" template="Mirasvit_Giftr::search/form/result.phtml" cacheable="false">
+         <block class="Mirasvit\Giftr\Block\Search\RegistryType" name="giftr.search.registry.type" as="giftrSearchRegistryType" template="Mirasvit_Giftr::search/form/registryType.phtml" cacheable="false">
+                </block>
+         <block class="Mirasvit\Giftr\Block\Search\Result" name="giftr.search.form" as="gitrSearchForm" template="Mirasvit_Giftr::search/form.phtml" cacheable="false">
+                    
+                </block>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="sales_order_view"><body>
+   <referenceContainer name="content">
+      <block class="Mirasvit\Giftr\Block\Sales\Order\Info" as="giftr.info" name="giftr.registry.info" after="sales.order.info" template="Mirasvit_Giftr::sales/order/info.phtml"/>
+   </referenceContainer>
+</body>
 </handle><handle id="braintree_googlepay_review" layout="1column"><head>
    <title>Review Order</title>
 </head>
@@ -7355,7 +7776,7 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1608568556;s:6:"expire";i:9999999999;s:4:"t
 </handle><handle id="default"><body>
    <move element="navigation.sections" destination="header-wrapper"/>
    <referenceContainer name="header-wrapper">
-      <container name="header-icons-block" htmlTag="div" htmlClass="header-icons" after="navigation.sections"/>
+      <container name="header-icons-block" htmlTag="div" htmlClass="header-icons"/>
    </referenceContainer>
    <move element="minicart" destination="header-icons-block"/>
    <move element="header.links" destination="header-icons-block"/>

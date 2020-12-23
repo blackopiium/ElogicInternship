@@ -89,6 +89,11 @@
         'sortOrder' => 10,
         'instance' => 'Magento\\Store\\Model\\Plugin\\StoreCookie',
       ),
+      'mstCoreDispatch' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\UrlRewritePlugin',
+      ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
@@ -121,6 +126,15 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Design\\Config\\Plugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory' => 
+    array (
+      'sales_order_additional_columns' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'Mirasvit\\Giftr\\Plugin\\SalesOrderGiftrColumn',
       ),
     ),
     'Magento\\Store\\Model\\Website' => 
@@ -2718,6 +2732,22 @@
         'instance' => 'Klarna\\KpGraphQl\\Plugin\\Model\\Resolver\\AvailablePaymentMethodsPlugin',
       ),
     ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator' => 
+    array (
+      'ValidateGiftrQuoteAddress' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => '\\Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\QuoteAddressValidatorPlugin',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId' => 
+    array (
+      'CartIdForRegistrantCustomer' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => '\\Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\Webapi\\ParamOverriderCartId',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -3059,6 +3089,11 @@
         'sortOrder' => 50,
         'instance' => 'Magento\\Deploy\\Model\\Plugin\\ConfigChangeDetector',
       ),
+      'mstCoreDispatch' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\UrlRewritePlugin',
+      ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
@@ -3085,6 +3120,15 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Design\\Config\\Plugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory' => 
+    array (
+      'sales_order_additional_columns' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'Mirasvit\\Giftr\\Plugin\\SalesOrderGiftrColumn',
       ),
     ),
     'Magento\\Store\\Api\\Data\\WebsiteInterface' => NULL,
@@ -7125,6 +7169,23 @@
         'instance' => 'Klarna\\KpGraphQl\\Plugin\\Model\\Resolver\\AvailablePaymentMethodsPlugin',
       ),
     ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator' => 
+    array (
+      'ValidateGiftrQuoteAddress' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\QuoteAddressValidatorPlugin',
+      ),
+    ),
+    'Magento\\Framework\\Webapi\\Rest\\Request\\ParamOverriderInterface' => NULL,
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId' => 
+    array (
+      'CartIdForRegistrantCustomer' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\Webapi\\ParamOverriderCartId',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -7467,6 +7528,7 @@
         0 => 'storeCookieValidate',
         1 => 'install',
         2 => 'configHash',
+        3 => 'mstCoreDispatch',
       ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage_deleteFile___self' => 
@@ -7510,6 +7572,10 @@
       array (
         0 => 'save_design_settings_event_dispatching',
       ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory_getReport___self' => 
+    array (
+      2 => 'sales_order_additional_columns',
     ),
     'Magento\\Store\\Model\\Website_save___self' => 
     array (
@@ -10891,6 +10957,21 @@
       4 => 
       array (
         0 => 'klarnaKpGraphQlAvailablePaymentMethods',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator_validate___self' => 
+    array (
+      2 => 'ValidateGiftrQuoteAddress',
+    ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator_validateForCart___self' => 
+    array (
+      2 => 'ValidateGiftrQuoteAddress',
+    ),
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId_getOverriddenValue___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'CartIdForRegistrantCustomer',
       ),
     ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 

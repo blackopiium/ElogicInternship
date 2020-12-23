@@ -44,6 +44,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Framework\\Url\\SecurityInfo' => 
     array (
@@ -89,6 +94,11 @@
         'sortOrder' => 10,
         'instance' => 'Magento\\Store\\Model\\Plugin\\StoreCookie',
       ),
+      'mstCoreDispatch' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\UrlRewritePlugin',
+      ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
@@ -121,6 +131,15 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Design\\Config\\Plugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory' => 
+    array (
+      'sales_order_additional_columns' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'Mirasvit\\Giftr\\Plugin\\SalesOrderGiftrColumn',
       ),
     ),
     'Magento\\Store\\Model\\Website' => 
@@ -2812,6 +2831,22 @@
         'instance' => 'Klarna\\KpGraphQl\\Plugin\\Model\\Resolver\\AvailablePaymentMethodsPlugin',
       ),
     ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator' => 
+    array (
+      'ValidateGiftrQuoteAddress' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => '\\Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\QuoteAddressValidatorPlugin',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId' => 
+    array (
+      'CartIdForRegistrantCustomer' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => '\\Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\Webapi\\ParamOverriderCartId',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -3078,6 +3113,11 @@
       array (
         'sortOrder' => 10,
         'instance' => 'Magento\\Developer\\Model\\TemplateEngine\\Plugin\\DebugHints',
+      ),
+      'mstCoreManualLink' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\ManualLinkPlugin',
       ),
     ),
     'Magento\\Catalog\\Controller\\Adminhtml\\Product\\Builder' => 
@@ -3501,6 +3541,40 @@
         'instance' => 'Magento\\Usps\\Block\\Adminhtml\\Order\\Packaging\\Plugin\\DisplayGirth',
       ),
     ),
+    'Magento\\Backend\\Block\\Menu' => 
+    array (
+      'mstCoreAppendJs' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Block\\Menu\\AppendJsPlugin',
+      ),
+      'mstCoreUpdateMarkup' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Block\\Menu\\UpdateMarkupPlugin',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Item' => 
+    array (
+      'mstCoreMarketplaceUrl' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Item\\MarketplaceUrlPlugin',
+      ),
+      'mstCoreDirectUrl' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Item\\DirectUrlPlugin',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Builder' => 
+    array (
+      'mstCoreBuilder' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Builder\\BuilderPlugin',
+      ),
+    ),
     'Magento\\Sales\\Model\\ResourceModel\\Order\\Grid\\Collection' => 
     array (
       'braintreeSalesOrderGrid' => 
@@ -3643,6 +3717,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Framework\\Url\\SecurityInfoInterface' => NULL,
     'Magento\\Framework\\Url\\SecurityInfo' => 
@@ -3736,6 +3815,11 @@
         'sortOrder' => 50,
         'instance' => 'Magento\\Deploy\\Model\\Plugin\\ConfigChangeDetector',
       ),
+      'mstCoreDispatch' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\UrlRewritePlugin',
+      ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage' => 
     array (
@@ -3762,6 +3846,15 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Design\\Config\\Plugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory' => 
+    array (
+      'sales_order_additional_columns' => 
+      array (
+        'sortOrder' => 10,
+        'disabled' => false,
+        'instance' => 'Mirasvit\\Giftr\\Plugin\\SalesOrderGiftrColumn',
       ),
     ),
     'Magento\\Store\\Api\\Data\\WebsiteInterface' => NULL,
@@ -4508,6 +4601,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Framework\\App\\Action\\Action' => 
     array (
@@ -4537,6 +4635,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Backend\\App\\AbstractAction' => 
     array (
@@ -4564,6 +4667,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -4608,6 +4716,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'adminMassactionKey' => 
       array (
         'sortOrder' => 11,
@@ -4650,6 +4763,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -4710,6 +4828,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Dotdigitalgroup\\Email\\Plugin\\CatalogProductAttributeSavePlugin',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -4970,6 +5093,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Creditmemo' => 
     array (
@@ -4992,6 +5120,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\OrderInterface' => NULL,
@@ -5023,6 +5156,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\History' => 
@@ -5058,6 +5196,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Invoice' => 
     array (
@@ -5087,6 +5230,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\Invoice' => 
     array (
@@ -5114,6 +5262,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintAction' => 
@@ -5144,6 +5297,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintAction' => 
     array (
@@ -5171,6 +5329,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintCreditmemo' => 
@@ -5201,6 +5364,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintCreditmemo' => 
     array (
@@ -5228,6 +5396,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintInvoice' => 
@@ -5258,6 +5431,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintInvoice' => 
     array (
@@ -5285,6 +5463,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintShipment' => 
@@ -5315,6 +5498,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintShipment' => 
     array (
@@ -5342,6 +5530,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Reorder' => 
@@ -5372,6 +5565,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\Reorder' => 
     array (
@@ -5399,6 +5597,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Shipment' => 
@@ -5429,6 +5632,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Sales\\Controller\\Order\\Shipment' => 
     array (
@@ -5456,6 +5664,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\View' => 
@@ -5490,6 +5703,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Sales\\Controller\\Order\\Plugin\\Authentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Model\\ResourceModel\\EntityAbstract' => NULL,
@@ -5641,6 +5859,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'captcha_validation' => 
       array (
@@ -7304,6 +7527,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'authentication' => 
       array (
         'sortOrder' => 10,
@@ -7346,6 +7574,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Checkout\\Controller\\Cart\\Index' => 
     array (
@@ -7373,6 +7606,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Amazon\\Login\\Plugin\\CartController',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Checkout\\Controller\\Action' => 
@@ -7403,6 +7641,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Checkout\\Controller\\Onepage' => 
     array (
@@ -7425,6 +7668,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Checkout\\Controller\\Index\\Index' => 
@@ -7453,6 +7701,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Amazon\\Login\\Plugin\\CheckoutController',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Customer\\Controller\\AccountInterface' => NULL,
@@ -7484,6 +7737,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Customer\\Controller\\Account\\Login' => 
     array (
@@ -7511,6 +7769,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Amazon\\Login\\Plugin\\LoginController',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Customer\\Controller\\Account\\Create' => 
@@ -7545,6 +7808,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Amazon\\Login\\Plugin\\CreateController',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Sales\\Api\\OrderCustomerManagementInterface' => 
@@ -7634,6 +7902,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Newsletter\\Controller\\Subscriber\\NewAction' => 
     array (
@@ -7661,6 +7934,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Dotdigitalgroup\\Email\\Plugin\\NewsletterEmailCapturePlugin',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
     ),
     'Magento\\Customer\\Model\\EmailNotificationInterface' => 
@@ -7731,6 +8009,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\Newsletter\\Controller\\Manage\\Index' => 
     array (
@@ -7759,6 +8042,11 @@
         'sortOrder' => 1,
         'instance' => 'Dotdigitalgroup\\Email\\Plugin\\NewsletterManageIndexPlugin',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Magento\\UrlRewrite\\Controller\\Adminhtml\\Url\\Rewrite' => 
     array (
@@ -7786,6 +8074,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -7834,6 +8127,11 @@
       array (
         'sortOrder' => 1,
         'instance' => 'Dotdigitalgroup\\Email\\Plugin\\UrlRewriteSavePlugin',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -7914,6 +8212,11 @@
         'disabled' => false,
         'instance' => 'Dotdigitalgroup\\Chat\\Plugin\\EmailcapturePlugin',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
     ),
     'Klarna\\Core\\Helper\\KlarnaConfig' => 
     array (
@@ -7962,6 +8265,23 @@
       array (
         'sortOrder' => 10,
         'instance' => 'Klarna\\KpGraphQl\\Plugin\\Model\\Resolver\\AvailablePaymentMethodsPlugin',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator' => 
+    array (
+      'ValidateGiftrQuoteAddress' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\QuoteAddressValidatorPlugin',
+      ),
+    ),
+    'Magento\\Framework\\Webapi\\Rest\\Request\\ParamOverriderInterface' => NULL,
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId' => 
+    array (
+      'CartIdForRegistrantCustomer' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Mirasvit\\Giftr\\Model\\Plugin\\Checkout\\Webapi\\ParamOverriderCartId',
       ),
     ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
@@ -8149,6 +8469,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'adminMassactionKey' => 
       array (
         'sortOrder' => 11,
@@ -8196,6 +8521,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Security\\Model\\Plugin\\LoginController',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -8326,6 +8656,11 @@
       array (
         'sortOrder' => 10,
         'instance' => 'Magento\\Developer\\Model\\TemplateEngine\\Plugin\\DebugHints',
+      ),
+      'mstCoreManualLink' => 
+      array (
+        'sortOrder' => 1000,
+        'instance' => 'Mirasvit\\Core\\Plugin\\ManualLinkPlugin',
       ),
     ),
     'Magento\\Catalog\\Controller\\Adminhtml\\Product\\Builder' => 
@@ -8498,6 +8833,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\InventoryInStorePickupShippingAdminUi\\Plugin\\Shipping\\Controller\\Order\\Shipment\\View\\ShipmentTrackingPlugin',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -8719,6 +9059,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'adminMassactionKey' => 
       array (
         'sortOrder' => 11,
@@ -8766,6 +9111,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Rss\\App\\Action\\Plugin\\BackendAuthentication',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -8818,6 +9168,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'adminMassactionKey' => 
       array (
         'sortOrder' => 11,
@@ -8865,6 +9220,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\InventoryInStorePickupSalesAdminUi\\Plugin\\Sales\\Controller\\AdminOrder\\Create\\SetPickupLocationFromPost',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -8948,6 +9308,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Theme\\Model\\Theme\\Plugin\\Registration',
       ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
+      ),
       'adminMassactionKey' => 
       array (
         'sortOrder' => 11,
@@ -8995,6 +9360,11 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Swatches\\Controller\\Adminhtml\\Product\\Attribute\\Plugin\\Save',
+      ),
+      'Mirasvit_Core::cronChecker' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Framework\\App\\FrontController\\CronCheckerPlugin',
       ),
       'adminMassactionKey' => 
       array (
@@ -9090,6 +9460,40 @@
         'instance' => 'Magento\\Usps\\Block\\Adminhtml\\Order\\Packaging\\Plugin\\DisplayGirth',
       ),
     ),
+    'Magento\\Backend\\Block\\Menu' => 
+    array (
+      'mstCoreAppendJs' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Block\\Menu\\AppendJsPlugin',
+      ),
+      'mstCoreUpdateMarkup' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Block\\Menu\\UpdateMarkupPlugin',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Item' => 
+    array (
+      'mstCoreMarketplaceUrl' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Item\\MarketplaceUrlPlugin',
+      ),
+      'mstCoreDirectUrl' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Item\\DirectUrlPlugin',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Builder' => 
+    array (
+      'mstCoreBuilder' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Mirasvit\\Core\\Plugin\\Backend\\Model\\Menu\\Builder\\BuilderPlugin',
+      ),
+    ),
     'Magento\\Framework\\Api\\Search\\SearchResultInterface' => NULL,
     'Magento\\Framework\\Api\\SearchResultsInterface' => NULL,
     'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\SearchResult' => 
@@ -9183,6 +9587,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Framework\\App\\ActionInterface_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Framework\\Url\\SecurityInfo_isSecure___self' => 
     array (
       2 => 'storeUrlSecurityInfo',
@@ -9242,6 +9653,7 @@
         1 => 'storeCookieValidate',
         2 => 'install',
         3 => 'configHash',
+        4 => 'mstCoreDispatch',
       ),
     ),
     'Magento\\Cms\\Model\\Wysiwyg\\Images\\Storage_deleteFile___self' => 
@@ -9285,6 +9697,10 @@
       array (
         0 => 'save_design_settings_event_dispatching',
       ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\CollectionFactory_getReport___self' => 
+    array (
+      2 => 'sales_order_additional_columns',
     ),
     'Magento\\Store\\Model\\Website_save___self' => 
     array (
@@ -9926,6 +10342,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Framework\\App\\Action\\AbstractAction_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Framework\\App\\Action\\Action_execute___self' => 
     array (
       1 => 
@@ -9944,6 +10367,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Framework\\App\\Action\\Action_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Backend\\App\\AbstractAction_execute___self' => 
@@ -9971,7 +10401,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -10007,7 +10438,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -10043,7 +10475,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -10084,7 +10517,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -10392,6 +10826,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Sales\\Controller\\AbstractController\\View_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Sales\\Controller\\AbstractController\\Creditmemo_execute___self' => 
     array (
       1 => 
@@ -10410,6 +10851,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\Creditmemo_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\Creditmemo_execute___self' => 
@@ -10437,6 +10885,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\History_execute___self' => 
@@ -10464,6 +10913,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Invoice_execute___self' => 
@@ -10484,6 +10934,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\Invoice_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\Invoice_execute___self' => 
@@ -10511,6 +10968,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintAction_execute___self' => 
@@ -10531,6 +10989,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\PrintAction_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintAction_execute___self' => 
@@ -10558,6 +11023,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintCreditmemo_execute___self' => 
@@ -10578,6 +11044,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\PrintCreditmemo_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintCreditmemo_execute___self' => 
@@ -10605,6 +11078,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintInvoice_execute___self' => 
@@ -10625,6 +11099,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\PrintInvoice_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintInvoice_execute___self' => 
@@ -10652,6 +11133,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\PrintShipment_execute___self' => 
@@ -10672,6 +11154,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\PrintShipment_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\PrintShipment_execute___self' => 
@@ -10699,6 +11188,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Reorder_execute___self' => 
@@ -10719,6 +11209,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\Reorder_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\Reorder_execute___self' => 
@@ -10746,6 +11243,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\AbstractController\\Shipment_execute___self' => 
@@ -10766,6 +11264,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Sales\\Controller\\AbstractController\\Shipment_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\Shipment_execute___self' => 
@@ -10793,6 +11298,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Controller\\Order\\View_execute___self' => 
@@ -10820,6 +11326,7 @@
       1 => 
       array (
         0 => 'authentication',
+        1 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Model\\ResourceModel\\Order\\Shipment_save___self' => 
@@ -10965,6 +11472,13 @@
         1 => 'customerNotification',
       ),
       2 => 'captcha_validation',
+    ),
+    'Magento\\Customer\\Controller\\Ajax\\Login_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
     ),
     'Magento\\Checkout\\Block\\Cart\\Sidebar_getConfig___self' => 
     array (
@@ -12352,7 +12866,8 @@
     array (
       1 => 
       array (
-        0 => 'authentication',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'authentication',
       ),
     ),
     'Magento\\Checkout\\CustomerData\\Cart_getSectionData___self' => 
@@ -12382,6 +12897,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Checkout\\Controller\\Cart_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Checkout\\Controller\\Cart\\Index_execute___self' => 
     array (
       1 => 
@@ -12406,6 +12928,13 @@
         0 => 'amazon_login_cart_controller',
       ),
     ),
+    'Magento\\Checkout\\Controller\\Cart\\Index_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Checkout\\Controller\\Action_execute___self' => 
     array (
       1 => 
@@ -12426,6 +12955,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Checkout\\Controller\\Action_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Checkout\\Controller\\Onepage_execute___self' => 
     array (
       1 => 
@@ -12444,6 +12980,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Checkout\\Controller\\Onepage_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Checkout\\Controller\\Index\\Index_execute___self' => 
@@ -12470,6 +13013,13 @@
         0 => 'amazon_login_checkout_controller',
       ),
     ),
+    'Magento\\Checkout\\Controller\\Index\\Index_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Customer\\Controller\\AbstractAccount_execute___self' => 
     array (
       1 => 
@@ -12488,6 +13038,13 @@
       array (
         0 => 'designLoader',
         1 => 'customerNotification',
+      ),
+    ),
+    'Magento\\Customer\\Controller\\AbstractAccount_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Customer\\Controller\\Account\\Login_execute___self' => 
@@ -12514,6 +13071,13 @@
         0 => 'amazon_login_login_controller',
       ),
     ),
+    'Magento\\Customer\\Controller\\Account\\Login_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Customer\\Controller\\Account\\Create_execute___self' => 
     array (
       1 => 
@@ -12536,6 +13100,13 @@
       4 => 
       array (
         0 => 'amazon_login_create_controller',
+      ),
+    ),
+    'Magento\\Customer\\Controller\\Account\\Create_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Sales\\Api\\OrderCustomerManagementInterface_create___self' => 
@@ -12601,6 +13172,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Newsletter\\Controller\\Subscriber_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Newsletter\\Controller\\Subscriber\\NewAction_execute___self' => 
     array (
       1 => 
@@ -12623,6 +13201,13 @@
       4 => 
       array (
         0 => 'ddg_newsletter_email_capture',
+      ),
+    ),
+    'Magento\\Newsletter\\Controller\\Subscriber\\NewAction_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
       ),
     ),
     'Magento\\Customer\\Model\\EmailNotificationInterface_newAccount___self' => 
@@ -12681,6 +13266,13 @@
         1 => 'customerNotification',
       ),
     ),
+    'Magento\\Newsletter\\Controller\\Manage_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Magento\\Newsletter\\Controller\\Manage\\Index_execute___self' => 
     array (
       1 => 
@@ -12701,6 +13293,13 @@
         1 => 'customerNotification',
       ),
       2 => 'dotmailer_newsletter_plugin',
+    ),
+    'Magento\\Newsletter\\Controller\\Manage\\Index_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
     ),
     'Magento\\UrlRewrite\\Controller\\Adminhtml\\Url\\Rewrite_execute___self' => 
     array (
@@ -12727,7 +13326,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -12767,7 +13367,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -12837,6 +13438,13 @@
         0 => 'ddg_chat_emailcapture_plugin',
       ),
     ),
+    'Dotdigitalgroup\\Email\\Controller\\Ajax\\Emailcapture_dispatch___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'Mirasvit_Core::cronChecker',
+      ),
+    ),
     'Klarna\\Core\\Helper\\KlarnaConfig_getOmBuilderType___self' => 
     array (
       4 => 
@@ -12881,6 +13489,21 @@
       4 => 
       array (
         0 => 'klarnaKpGraphQlAvailablePaymentMethods',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator_validate___self' => 
+    array (
+      2 => 'ValidateGiftrQuoteAddress',
+    ),
+    'Magento\\Quote\\Model\\QuoteAddressValidator_validateForCart___self' => 
+    array (
+      2 => 'ValidateGiftrQuoteAddress',
+    ),
+    'Magento\\Quote\\Model\\Webapi\\ParamOverriderCartId_getOverriddenValue___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'CartIdForRegistrantCustomer',
       ),
     ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 
@@ -13131,7 +13754,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13168,7 +13792,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13273,6 +13898,7 @@
       4 => 
       array (
         0 => 'debug_hints',
+        1 => 'mstCoreManualLink',
       ),
     ),
     'Magento\\Catalog\\Controller\\Adminhtml\\Product\\Builder_build___self' => 
@@ -13435,7 +14061,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13641,7 +14268,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13681,8 +14309,9 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
-        1 => 'adminLoadDesign',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
+        2 => 'adminLoadDesign',
       ),
     ),
     'Magento\\Sales\\Block\\Adminhtml\\Order\\View\\Info_getAddressEditLink___self' => 
@@ -13718,7 +14347,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13755,7 +14385,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13814,7 +14445,8 @@
     array (
       1 => 
       array (
-        0 => 'adminMassactionKey',
+        0 => 'Mirasvit_Core::cronChecker',
+        1 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13851,7 +14483,8 @@
       1 => 
       array (
         0 => 'save_swatches_frontend_input',
-        1 => 'adminMassactionKey',
+        1 => 'Mirasvit_Core::cronChecker',
+        2 => 'adminMassactionKey',
       ),
       2 => 'adminAuthentication',
     ),
@@ -13922,6 +14555,35 @@
     'Magento\\Shipping\\Block\\Adminhtml\\Order\\Packaging_isDisplayGirthValue___self' => 
     array (
       2 => 'usps',
+    ),
+    'Magento\\Backend\\Block\\Menu_toHtml___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'mstCoreAppendJs',
+      ),
+    ),
+    'Magento\\Backend\\Block\\Menu_renderNavigation___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'mstCoreUpdateMarkup',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Item_getUrl___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'mstCoreMarketplaceUrl',
+        1 => 'mstCoreDirectUrl',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Menu\\Builder_getResult___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'mstCoreBuilder',
+      ),
     ),
     'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\SearchResult_getCurPage___self' => 
     array (

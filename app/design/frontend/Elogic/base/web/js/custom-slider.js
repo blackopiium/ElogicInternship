@@ -7,6 +7,7 @@ define([
 
     $.widget('elogic.carousel', {
         options: {
+            pagingInfoEnabled: false,
             slickConfig: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -18,11 +19,13 @@ define([
         },
 
         _create: function() {
-            var $status = this.element.closest('.container-fluid').find('.pagingInfo');
-            this.element.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
-                var i = (currentSlide ? currentSlide : 0) + 1;
-                $status.text(i + ' ' + 'of' + ' ' + slick.slideCount);
-            });
+            if (this.options.pagingInfoEnabled) {
+                var $status = this.element.closest('.container-fluid').find('.pagingInfo');
+                this.element.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+                    var i = (currentSlide ? currentSlide : 0) + 1;
+                    $status.text(i + ' ' + 'of' + ' ' + slick.slideCount);
+                });
+            }
             this.element.slick(this.options.slickConfig);
         }
     });

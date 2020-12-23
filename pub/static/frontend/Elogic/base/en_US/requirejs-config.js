@@ -1026,6 +1026,20 @@ require.config(config);
 })();
 (function() {
 var config = {
+    map: {
+        '*': {
+            giftr: 'Mirasvit_Giftr/js/giftr',
+            giftrItem: 'Mirasvit_Giftr/js/item',
+            'Magento_Checkout/js/model/shipping-rates-validator':'Mirasvit_Giftr/js/model/shipping-rates-validator',
+            'Magento_Checkout/js/view/payment/default': 'Mirasvit_Giftr/js/view/payment/default'
+        }
+    }
+};
+
+require.config(config);
+})();
+(function() {
+var config = {
     config: {
         mixins: {
             'Magento_Checkout/js/model/step-navigator': {
@@ -1226,9 +1240,7 @@ var config = {
         '*': {
             'slick': 'js/slick',
             'carousel': 'js/custom-slider',
-            'productSlider': 'js/product-slider',
             'tabSliderFix': 'js/tab-slider-fix',
-            'newsSlider': 'js/news-slider',
             'selectize': 'js/selectize',
             'sifter': 'js/sifter',
             'microplugin': 'js/microplugin',

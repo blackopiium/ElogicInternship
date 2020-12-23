@@ -685,6 +685,16 @@ var config = {
 require.config(config);
 })();
 (function() {
+var config = {
+    map: {
+        '*': {
+            GiftrNewItem: 'Mirasvit_Giftr/js/item/new'
+        }
+    }
+}
+require.config(config);
+})();
+(function() {
 /**
  * Config to pull in all the relevant Braintree JS SDKs
  * @type {{paths: {braintreePayPalCheckout: string, braintreeHostedFields: string, braintreeDataCollector: string, braintreeThreeDSecure: string, braintreeGooglePay: string, braintreeApplePay: string, googlePayLibrary: string}, map: {"*": {braintree: string}}}}

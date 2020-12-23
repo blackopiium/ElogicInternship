@@ -3,7 +3,7 @@
     <body>
         <move element="navigation.sections" destination="header-wrapper"/>
       <referenceContainer name="header-wrapper">
-          <container name="header-icons-block" htmlTag="div" htmlClass="header-icons" after="navigation.sections"/>
+          <container name="header-icons-block" htmlTag="div" htmlClass="header-icons"/>
       </referenceContainer>
         <move element="minicart" destination="header-icons-block"/>
        <move element="header.links" destination="header-icons-block"/>
