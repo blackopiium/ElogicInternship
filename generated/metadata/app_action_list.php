@@ -1469,6 +1469,7 @@
   'mirasvit\\giftr\\controller\\search' => 'Mirasvit\\Giftr\\Controller\\Search',
   'mirasvit\\giftr\\controller\\registry' => 'Mirasvit\\Giftr\\Controller\\Registry',
   'mirasvit\\giftr\\controller\\giftr\\resume' => 'Mirasvit\\Giftr\\Controller\\Giftr\\Resume',
+  'ownmodule\\slider\\controller\\index\\index' => 'OwnModule\\Slider\\Controller\\Index\\Index',
   'paypal\\braintree\\controller\\adminhtml\\payment\\getnonce' => 'PayPal\\Braintree\\Controller\\Adminhtml\\Payment\\GetNonce',
   'paypal\\braintree\\controller\\adminhtml\\configuration\\validate' => 'PayPal\\Braintree\\Controller\\Adminhtml\\Configuration\\Validate',
   'paypal\\braintree\\controller\\adminhtml\\virtual\\index' => 'PayPal\\Braintree\\Controller\\Adminhtml\\Virtual\\Index',
